@@ -22,3 +22,12 @@ tp_declare(spdlog
             SPDLOG_INSTALL=OFF
 )
 
+# --- httplib: 轻量级 HTTP/HTTPS 客户端/服务端 (header-only) ---
+# 注: HTTPS 需要 OpenSSL, 默认仅 HTTP。如需 HTTPS, 装好 OpenSSL 后
+#     主程序加 -DHTTPLIB_REQUIRE_OPENSSL=ON 即可。
+tp_declare(httplib
+    REPO    https://github.com/yhirose/cpp-httplib.git
+    TAG     v0.18.3
+    OPTIONS HTTPLIB_INSTALL=OFF
+)
+

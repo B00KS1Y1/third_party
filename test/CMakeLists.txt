@@ -17,4 +17,5 @@ add_executable(tp_test main.cpp)
 target_link_libraries(tp_test PRIVATE
     nlohmann_json::nlohmann_json
     spdlog::spdlog
+    httplib::httplib
 )

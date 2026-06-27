@@ -3,6 +3,7 @@
 /spdlog/
 .claude/
 .qtcreator/
+test/build/
 
 # 保留管理文件
 !CMakeLists.txt
