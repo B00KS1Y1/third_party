@@ -1,6 +1,8 @@
 # 下载的依赖源码不纳入版本控制, 由 CMake 按 dependencies.cmake 自动拉取
 /nlohmann_json/
 /spdlog/
+/httplib/
+
 .claude/
 .qtcreator/
 test/build/
