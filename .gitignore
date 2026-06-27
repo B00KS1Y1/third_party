@@ -1,0 +1,12 @@
+# 下载的依赖源码不纳入版本控制, 由 CMake 按 dependencies.cmake 自动拉取
+/nlohmann_json/
+/spdlog/
+.claude/
+.qtcreator/
+
+# 保留管理文件
+!CMakeLists.txt
+!dependencies.cmake
+!cmake/
+!README.md
+!.gitignore
