@@ -45,7 +45,8 @@ tp_declare(<名称>
 |---|---|---|
 | nlohmann_json | v3.11.3 | `nlohmann_json::nlohmann_json` |
 | spdlog | v1.15.0 | `spdlog::spdlog` |
-| Fast-DDS | v3.1.0 | `fastdds` (内含 fastcdr 子模块) |
+| httplib | v0.18.3 | `httplib::httplib` |
+| Cyclone DDS | 0.10.5 | `CycloneDDS::ddsc` |
 
 ## 文件说明
 
@@ -57,6 +58,7 @@ tp_declare(<名称>
 
 ## 注意
 
-- 首次配置会从 GitHub 克隆，Fast-DDS 较大，需要网络通畅。
+- 首次配置会从 GitHub 克隆, Cyclone DDS 较大, 需要网络通畅。
 - 需要本机安装 `git`。
-- Fast-DDS 通过 `THIRDPARTY=ON` 自动处理 foonathan_memory / tinyxml2 / asio 子依赖。
+- Cyclone DDS 默认开启 `BUILD_IDLC=ON`, 提供 IDL 编译器与 `idlc_generate()`；
+  不需要从 `.idl` 生成代码时可在主程序加 `-DBUILD_IDLC=OFF`。

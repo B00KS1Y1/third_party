@@ -31,3 +31,17 @@ tp_declare(httplib
     OPTIONS HTTPLIB_INSTALL=OFF
 )
 
+# --- Cyclone DDS: Eclipse 开源 DDS 中间件 (C 库) ---
+# 链接目标: CycloneDDS::ddsc
+# 注: BUILD_IDLC=ON 提供 IDL 编译器与 idlc_generate() 宏, 用于从 .idl 生成类型代码。
+#     如需 C++ 绑定 (ddscxx), 那是另一个仓库 cyclonedds-cxx, 依赖本库。
+tp_declare(cyclonedds
+    REPO    https://github.com/eclipse-cyclonedds/cyclonedds.git
+    TAG     0.10.5
+    OPTIONS BUILD_TESTING=OFF
+            BUILD_EXAMPLES=OFF
+            BUILD_IDLC=ON
+            BUILD_DDSPERF=OFF
+            ENABLE_SECURITY=OFF
+)
+

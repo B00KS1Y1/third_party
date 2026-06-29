@@ -4,6 +4,7 @@
 // ============================================================
 #include <iostream>
 
+#include <dds/dds.h>
 #include <httplib.h>
 #include <nlohmann/json.hpp>
 #include <spdlog/spdlog.h>
@@ -25,6 +26,16 @@ int main() {
   httplib::Client cli("http://localhost");
   (void)cli;
   spdlog::info("httplib OK: version {}", CPPHTTPLIB_VERSION);
+
+  // --- Cyclone DDS --- (创建并删除一个 participant, 验证头文件与链接)
+  dds_entity_t participant =
+      dds_create_participant(DDS_DOMAIN_DEFAULT, NULL, NULL);
+  if (participant < 0) {
+    spdlog::error("cyclonedds FAIL: {}", dds_strretcode(-participant));
+    return 1;
+  }
+  dds_delete(participant);
+  spdlog::info("cyclonedds OK: participant created and deleted");
 
   spdlog::info("All dependency tests passed");
   return 0;

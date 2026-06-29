@@ -2,10 +2,12 @@
 /nlohmann_json/
 /spdlog/
 /httplib/
+/cyclonedds/
 
 .claude/
 .qtcreator/
 test/build/
+build/
 
 # 保留管理文件
 !CMakeLists.txt
